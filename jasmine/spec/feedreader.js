@@ -34,7 +34,7 @@ $(function() {
             for (var i in allFeeds) {
                 expect(allFeeds[i].url).toBeDefined(); // expect each feed url url is defined
                 expect(allFeeds[i].url.length).not.toBe(0); // expect each feed url is not empty
-                expect(typeof allFeeds[i].url).toEqual('string') // expect each feed url is string
+                expect(typeof allFeeds[i].url).toEqual('string'); // expect each feed url is string
             }
         });
 
