@@ -70,7 +70,7 @@ $(function() {
          * should have two expectations: does the menu display when
          * clicked and does it hide when clicked again.
          */
-        describe('changes visibility is when the menu icon is clicked', function() {
+        describe('changes visibility when the menu icon is clicked', function() {
             // before expectations functions run, trigger click event on the menu icon
             beforeEach(function() {
                 $('.menu-icon-link').trigger('click');
