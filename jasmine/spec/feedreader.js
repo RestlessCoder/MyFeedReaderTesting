@@ -110,10 +110,35 @@ $(function() {
     });
           
     /* TODO: Write a new test suite named "New Feed Selection" */
-
+    describe('New Feed Selection', function() {
+        var feed = $('.feed');
+        var oldContent, newContent;
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        // Before the test run, retrieve and store the content of the initial screen the load the new feed
+        // afterwards, run loadFeed function with the second feed source
+        beforeEach(function(done) {
+            oldContent = feed.html();
+            loadFeed(1, function() {
+                done();
+            });
+        });
+
+        // Ensure the content has been changed compared to the old content
+        it('content should be changes', function(done) {
+            newContent = feed.html();
+            expect(oldContent).not.toBe(newContent);
+            done();
+        });
+
+        // Go back to initial feed when the test is finish
+        afterEach(function(done) {
+            loadFeed(0, function() {
+                done();
+            });
+        });
+    });
 
 }());
