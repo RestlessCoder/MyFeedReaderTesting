@@ -69,7 +69,7 @@ $(function() {
     describe('Initial Entries', function() {
         // before expectation function run, run loadFeed function with first feed source
         beforeEach(function(done) {
-            loadFeed(0, done) // Call loadFeed() for initial entries. loadFeed() function will call done() when it's done
+            loadFeed(0, done); // Call loadFeed() for initial entries. loadFeed() function will call done() when it's done
         });
 
         it('has at least a minimum 1 entry in feed container', function(done) {
